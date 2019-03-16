@@ -1,0 +1,92 @@
+{
+  "name": "gatsbythemes-design-system",
+  "version": "0.0.1",
+  "description": "Gatsbythemes Design System",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "prepare": "rollup --config",
+    "clean": "rm -rf node_modules dist",
+    "test": "jest",
+    "start": "start-storybook -p 8000 -c storybook",
+    "storybook": "build-storybook -c storybook -o docs/out/storybook",
+    "build:svg": "svgr svg -d src/Icons",
+    "build:index": "node ./create-index.js",
+    "build:copy": "cp src/Icon.js src/Svg.js src/index.js src/Icons"
+  },
+  "author": "Sascha Jullmann",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.9",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-info": "^4.1.11",
+    "@storybook/react": "^5.0.1",
+    "@svgr/cli": "^4.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.5",
+    "camelcase": "^5.0.0",
+    "emotion-theming": "^10.0.9",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "husky": "^0.14.3",
+    "jest": "^24.1.0",
+    "jest-emotion": "^10.0.9",
+    "lint-staged": "^4.2.3",
+    "prettier": "^1.16.4",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-test-renderer": "^16.8.2",
+    "react-testing-library": "^5.2.3",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-babel-runtime-external": "^2.0.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-filesize": "^5.0.1",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "stylis": "^3.4.9"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./test-setup.js"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "dist"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "testMatch": [
+      "<rootDir>/test/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "lodash.upperfirst": "^4.3.1",
+    "prop-types": "^15.7.2",
+    "styled-system": "^3.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saschajullmann/design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saschajullmann/design-system/issues"
+  }
+}
